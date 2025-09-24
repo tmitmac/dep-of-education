@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Department of Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #f3f4f6; /* gray-100 */
+    }
+    main {
+      flex: 1; /* main content fills available space */
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Header -->
+  <header class="bg-purple-900 text-white p-4 shadow-md flex justify-between items-center">
+    <h1 class="text-xl font-bold">Department of Education</h1>
+    <button onclick="logout()" class="bg-white text-purple-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-200">
+      Logout
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-purple-900 mb-8 text-center" data-aos="fade-down">
+      Welcome to the Education Services Portal
+    </h2>
+
+    <!-- Grid of Service Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Service Card -->
+      <div class="bg-white shadow-lg rounded-xl p-6" data-aos="fade-up">
+        <h3 class="text-lg font-bold text-purple-900 mb-2">Student Records</h3>
+        <p class="text-gray-600 mb-4">Access and manage student information, enrollment, and history.</p>
+        <a href="#" class="text-purple-600 font-medium hover:underline">Go to Records →</a>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-white shadow-lg rounded-xl p-6" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-lg font-bold text-purple-900 mb-2">Examinations</h3>
+        <p class="text-gray-600 mb-4">View upcoming national exams, schedules, and results.</p>
+        <a href="examination.html" class="text-purple-600 font-medium hover:underline">View Exams →</a>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-white shadow-lg rounded-xl p-6" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-lg font-bold text-purple-900 mb-2">Scholarships</h3>
+        <p class="text-gray-600 mb-4">Apply for government scholarships and check eligibility criteria.</p>
+        <a href="#" class="text-purple-600 font-medium hover:underline">Apply Now →</a>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-white shadow-lg rounded-xl p-6" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-lg font-bold text-purple-900 mb-2">Teacher Resources</h3>
+        <p class="text-gray-600 mb-4">Guides, professional development, and teaching materials.</p>
+        <a href="#" class="text-purple-600 font-medium hover:underline">Explore Resources →</a>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-white shadow-lg rounded-xl p-6" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-lg font-bold text-purple-900 mb-2">Government Services</h3>
+        <p class="text-gray-600 mb-4">Access education-related services provided by the department.</p>
+        <a href="#" class="text-purple-600 font-medium hover:underline">View Services →</a>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-white shadow-lg rounded-xl p-6" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="text-lg font-bold text-purple-900 mb-2">Support</h3>
+        <p class="text-gray-600 mb-4">Need help? Get assistance and contact department staff.</p>
+        <a href="#" class="text-purple-600 font-medium hover:underline">Get Support →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-purple-900 text-white text-center py-4 mt-auto">
+    <p>&copy; 2025 Department of Education. All rights reserved.</p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
+       function logout() {
+  // Redirect silently
+  window.location.href = "login.html";
+}
+
+  </script>
+</body>
+</html>
