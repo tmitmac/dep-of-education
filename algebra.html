@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Algebra | Square Country Student Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #6a0dad 0%, #8a2be2 100%); }
+    .btn-primary { background: #6a0dad; transition: all 0.3s ease; }
+    .btn-primary:hover { background: #8a2be2; transform: translateY(-2px); }
+    .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: white; transition: width 0.3s ease; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+<!-- Navigation -->
+<nav class="bg-purple-900 text-white shadow-lg">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+        <i data-feather="book-open" class="text-purple-900 w-6 h-6"></i>
+      </div>
+      <h1 class="text-xl font-bold">Student Learning Hub</h1>
+    </div>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="nav-link font-medium">Home</a>
+      <a href="mathematics.html" class="nav-link font-medium active">Mathematics</a>
+      <a href="science.html" class="nav-link font-medium">Science</a>
+      <a href="english.html" class="nav-link font-medium">English & Languages</a>
+      <a href="pe.html" class="nav-link font-medium">PE & Health</a>
+      <a href="technology.html" class="nav-link font-medium">Technology & Business</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero" class="hero-gradient text-white py-24">
+  <div class="container mx-auto px-6 text-center" data-aos="fade-down">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Algebra Learning Modules</h1>
+    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+      Master equations, inequalities, functions, and more with step-by-step guidance and interactive exercises.
+    </p>
+  </div>
+</section>
+
+<!-- Modules -->
+<section id="algebra-modules" class="bg-gray-50 py-20">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-3" data-aos="fade-up">Interactive Modules</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Learn algebra step by step, from basics to advanced topics.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Algebra Basics -->
+      <a href="algebra-basics.html" class="block">
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1" data-aos="fade-up">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Algebra Basics</h3>
+          <p class="text-gray-600">Introduction to variables, expressions, and simple equations.</p>
+        </div>
+      </a>
+
+      <!-- Linear Equations -->
+      <a href="linearequations.html" class="block">
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Linear Equations</h3>
+          <p class="text-gray-600">Solving one-step and multi-step equations with examples.</p>
+        </div>
+      </a>
+
+      <!-- Inequalities -->
+      <a href="inequalities.html" class="block">
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Inequalities</h3>
+          <p class="text-gray-600">Understanding and solving inequalities with number line representation.</p>
+        </div>
+      </a>
+
+      <!-- Quadratics -->
+      <a href="quadratics.html" class="block">
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Quadratic Equations</h3>
+          <p class="text-gray-600">Factorization, completing the square, and quadratic formula practice.</p>
+        </div>
+      </a>
+
+      <!-- Functions & Graphs -->
+      <a href="functions.html" class="block">
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Functions & Graphs</h3>
+          <p class="text-gray-600">Mapping, interpreting, and graphing functions effectively.</p>
+        </div>
+      </a>
+
+      <!-- Systems of Equations -->
+      <a href="systems-of-equations.html" class="block">
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="500">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Systems of Equations</h3>
+          <p class="text-gray-600">Solving linear systems via substitution, elimination, and graphs.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+  <div class="container mx-auto px-6 text-center md:text-left grid md:grid-cols-4 gap-8">
+    <div>
+      <h3 class="font-bold text-white mb-3">Student Learning Hub</h3>
+      <p>Empowering every learner across Square Country.</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Explore</h4>
+      <ul class="space-y-2">
+        <li><a href="mathematics.html" class="hover:text-white">Mathematics</a></li>
+        <li><a href="science.html" class="hover:text-white">Science</a></li>
+        <li><a href="english.html" class="hover:text-white">English & Languages</a></li>
+        <li><a href="pe.html" class="hover:text-white">PE & Health</a></li>
+        <li><a href="technology.html" class="hover:text-white">Technology & Business</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Resources</h4>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-white">Practice Problems</a></li>
+        <li><a href="#" class="hover:text-white">Curriculum Guides</a></li>
+        <li><a href="#" class="hover:text-white">Teacher Resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Contact</h4>
+      <p>123 Education Avenue<br>Capital City, SC</p>
+      <p>Email: <a href="mailto:info@education.sc.gov" class="text-purple-400 hover:underline">info@education.sc.gov</a></p>
+    </div>
+  </div>
+  <div class="text-center border-t border-gray-800 mt-8 pt-6 text-sm text-gray-500">
+    © 2025 Square Country Student Hub. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  feather.replace();
+  VANTA.GLOBE({
+    el: "#hero",
+    mouseControls: true,
+    touchControls: true,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    color: 0x8a2be2,
+    backgroundColor: 0x6a0dad,
+    size: 0.9
+  });
+</script>
+</body>
+</html>

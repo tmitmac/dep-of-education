@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Square Country Ministry of Education</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body { font-family: 'Poppins', sans-serif; background-color: #f3f4f6; }
+.hero-gradient { background: linear-gradient(135deg, #6a0dad 0%, #8a2be2 100%); }
+.btn-primary { background: #6a0dad; transition: all 0.3s ease; }
+.btn-primary:hover { background: #8a2be2; transform: translateY(-2px); }
+.nav-link { position: relative; }
+.nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: white; transition: width 0.3s ease; }
+.nav-link:hover::after { width: 100%; }
+.feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="bg-purple-900 text-white shadow-lg">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                    <i data-feather="book-open" class="w-8 h-8 text-purple-900"></i>
+                </div>
+                <h1 class="text-2xl font-bold">Ministry of Education</h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link font-medium">Home</a>
+                <a href="schools.html" class="nav-link font-medium">Schools</a>
+                <a href="programs.html" class="nav-link font-medium">Programs</a>
+                <a href="resources.html" class="nav-link font-medium">Resources</a>
+                <a href="#" class="nav-link font-medium">About</a>
+                <a href="login.html" class="bg-white text-purple-900 px-4 py-2 rounded-lg font-medium hover:bg-purple-100 transition">Login</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero" class="hero-gradient text-white py-24">
+    <div class="container mx-auto px-6 text-center" data-aos="fade-down">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">About the Ministry of Education</h1>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            Dedicated to shaping the future of Square Country through innovation, inclusion, and quality education for all citizens.
+        </p>
+        <a href="programs.html" class="btn-primary px-6 py-3 rounded-lg text-white font-medium inline-block">Our Programs</a>
+    </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+            <img src="http://static.photos/education/1024x576/1" alt="Students learning" class="rounded-xl shadow-2xl">
+        </div>
+        <div data-aos="fade-left">
+            <h2 class="text-3xl font-bold text-purple-900 mb-6">Our Mission & Vision</h2>
+            <p class="text-gray-600 mb-4">To provide equitable access to high-quality education for every learner, fostering critical thinking, creativity, and lifelong learning.</p>
+            <p class="text-gray-600 mb-4">We envision a nation where every student has the opportunity to thrive academically, socially, and personally, preparing them to succeed in a rapidly changing world.</p>
+            <a href="resources.html" class="text-purple-900 font-medium hover:underline mt-4 inline-block">Explore Resources →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-12" data-aos="fade-up">Core Values</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="feature-card bg-purple-50 p-8 rounded-xl shadow-md" data-aos="fade-up">
+                <i data-feather="award" class="w-10 h-10 text-purple-900 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Excellence</h3>
+                <p class="text-gray-600">Maintaining high standards across all educational programs and initiatives.</p>
+            </div>
+            <div class="feature-card bg-purple-50 p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                <i data-feather="users" class="w-10 h-10 text-purple-900 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Inclusion</h3>
+                <p class="text-gray-600">Ensuring every learner has equitable access to education regardless of background.</p>
+            </div>
+            <div class="feature-card bg-purple-50 p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                <i data-feather="globe" class="w-10 h-10 text-purple-900 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Innovation</h3>
+                <p class="text-gray-600">Fostering creativity, digital learning, and forward-thinking approaches to education.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-12" data-aos="fade-up">Our Leadership</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up">
+                <img src="http://static.photos/education/300x300/1" alt="Leader" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold mb-2">Rt. Hon. Trent McKenzie</h3>
+                <p class="text-gray-600">Minister of Education</p>
+            </div>
+            <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                <img src="http://static.photos/education/300x300/2" alt="Leader" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold mb-2">Hon. Campbell Craw</h3>
+                <p class="text-gray-600">Deputy Minister</p>
+            </div>
+            <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                <img src="http://static.photos/education/300x300/3" alt="Leader" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold mb-2">Sadie Rockwood</h3>
+                <p class="text-gray-600">Head of Square Country Qualifications Authority</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-purple-900 text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Get Involved</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Support education initiatives or collaborate with us to make a meaningful impact in Square Country.</p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="#" class="bg-white text-purple-900 px-8 py-3 rounded-lg font-medium hover:bg-purple-100 transition">Contact Us</a>
+            <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-purple-900 transition">Subscribe to Newsletter</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6 text-center md:text-left grid md:grid-cols-4 gap-8">
+        <div>
+            <h3 class="text-xl font-bold mb-4">Ministry of Education</h3>
+            <p class="text-gray-400">Advancing education and opportunity for all in Square Country.</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+                <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                <li><a href="schools.html" class="text-gray-400 hover:text-white">Schools Directory</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4">Resources</h4>
+            <ul class="space-y-2">
+                <li><a href="#" class="text-gray-400 hover:text-white">Publications</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">Curriculum</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">Research</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">Statistics</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4">Contact</h4>
+            <address class="not-italic text-gray-400">
+                <p class="mb-2">312 Education Avenue</p>
+                <p class="mb-2">Masterton City, SC 10001</p>
+                <p class="mb-2">Phone: (123) 456-7890</p>
+                <p>Email: info@education.sc.gov</p>
+            </address>
+        </div>
+    </div>
+    <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>© 2025 Square Country Ministry of Education. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+feather.replace();
+VANTA.GLOBE({
+    el: "#hero",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x8a2be2,
+    backgroundColor: 0x6a0dad,
+    size: 0.8
+});
+</script>
+</body>
+</html>

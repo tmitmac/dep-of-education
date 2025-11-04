@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subject Details - Department of Education</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+body { font-family: 'Poppins', sans-serif; min-height: 100vh; display: flex; flex-direction: column; background-color: #f3f4f6; }
+main { flex: 1; max-width: 1000px; margin: 2rem auto; padding: 2rem; background:white; border-radius:1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+h1 { margin-bottom: 1rem; }
+h2 { margin-top:2rem; margin-bottom:1rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.75rem; border-bottom: 1px solid #e5e7eb; text-align: left; }
+.card { padding:1rem; background:#f9fafb; border-radius:0.5rem; box-shadow:0 2px 5px rgba(0,0,0,0.05); }
+</style>
+</head>
+<body>
+
+<nav class="bg-purple-900 text-white shadow-lg p-4 flex justify-between items-center">
+  <h1 class="text-2xl font-bold">Department of Education</h1>
+  <div class="flex gap-4">
+    <a href="grades.html?subject=" class="bg-white text-purple-900 px-4 py-2 rounded-lg font-medium hover:bg-purple-100 transition">
+      Back to Grades
+    </a>
+    <button id="logoutBtn" class="bg-white text-purple-900 px-4 py-2 rounded-lg font-medium hover:bg-purple-100 transition">
+      Logout
+    </button>
+  </div>
+</nav>
+
+<main data-aos="fade-up">
+  <h1 id="subjectTitle" class="text-3xl font-bold text-purple-900"></h1>
+  <p class="text-gray-700 mb-6">Below are the achievement standards associated with this subject, including internal and external standards.</p>
+
+  <h2 class="text-2xl font-bold text-purple-900">Achievement Standards</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Code & Name</th>
+        <th>Grade</th>
+        <th>Type</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody id="achievementStandards"></tbody>
+  </table>
+
+  <h2 class="text-2xl font-bold text-purple-900 mt-8">Past Exams & Exemplars</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="pastExams"></div>
+
+</main>
+
+<footer class="bg-purple-900 text-white text-center py-4 mt-auto">
+  <p>&copy; 2025 Department of Education. All rights reserved.</p>
+</footer>
+
+<script>
+AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
+const urlParams = new URLSearchParams(window.location.search);
+const subjectName = urlParams.get("subject") || "Mathematics";
+const selectedGrade = urlParams.get("grade"); // "10", "11", "12"
+document.getElementById("subjectTitle").textContent = subjectName;
+
+// === Full Achievement Standards for all subjects ===
+const achievementStandards = [
+  // --- Mathematics ---
+  { code: "31011", name: "Demonstrate understanding of solving linear equations in applied contexts", grade: "10", type: "Internal", subject: "Algebra", link: "achievement-standards/31011.pdf" },
+  { code: "31012", name: "Demonstrate understanding of factorising quadratic expressions", grade: "10", type: "Internal", subject: "Algebra", link: "achievement-standards/31012.pdf" },
+  { code: "31013", name: "Demonstrate understanding of interpreting graphs of functions", grade: "10", type: "Internal", subject: "Algebra", link: "achievement-standards/31013.pdf" },
+  { code: "31021", name: "Demonstrate understanding of solving simultaneous equations in complex scenarios", grade: "10", type: "External", subject: "Algebra", link: "achievement-standards/31021.pdf" },
+  { code: "61011", name: "Demonstrate understanding of polynomial operations and their applications", grade: "11", type: "Internal", subject: "Algebra", link: "achievement-standards/61011.pdf" },
+  { code: "61012", name: "Demonstrate understanding of exponential and logarithmic functions", grade: "11", type: "Internal", subject: "Algebra", link: "achievement-standards/61012.pdf" },
+  { code: "61013", name: "Demonstrate understanding of sequences and series in problem solving", grade: "11", type: "Internal", subject: "Algebra", link: "achievement-standards/61013.pdf" },
+  { code: "61021", name: "Demonstrate understanding of advanced algebraic modelling in real-world contexts", grade: "11", type: "External", subject: "Algebra", link: "achievement-standards/61021.pdf" },
+  { code: "91011", name: "Demonstrate understanding of solving complex number equations", grade: "12", type: "Internal", subject: "Algebra", link: "achievement-standards/91011.pdf" },
+  { code: "91012", name: "Demonstrate understanding of matrices and their applications", grade: "12", type: "Internal", subject: "Algebra", link: "achievement-standards/91012.pdf" },
+  { code: "91013", name: "Demonstrate understanding of algebraic functions in calculus preparation", grade: "12", type: "Internal", subject: "Algebra", link: "achievement-standards/91013.pdf" },
+  { code: "91021", name: "Demonstrate understanding of modelling advanced algebraic problems under timed conditions", grade: "12", type: "External", subject: "Algebra", link: "achievement-standards/91021.pdf" },
+
+  // --- Geometry ---
+  { code: "31111", name: "Demonstrate understanding of properties of triangles and quadrilaterals", grade: "10", type: "Internal", subject: "Geometry", link: "achievement-standards/31111.pdf" },
+  { code: "31112", name: "Demonstrate understanding of coordinate geometry in planar contexts", grade: "10", type: "Internal", subject: "Geometry", link: "achievement-standards/31112.pdf" },
+  { code: "31113", name: "Demonstrate understanding of angles and congruence proofs", grade: "10", type: "Internal", subject: "Geometry", link: "achievement-standards/31113.pdf" },
+  { code: "31121", name: "Demonstrate understanding of geometric constructions and reasoning", grade: "10", type: "External", subject: "Geometry", link: "achievement-standards/31121.pdf" },
+  { code: "61111", name: "Demonstrate understanding of circle theorems and properties", grade: "10", type: "Internal", subject: "Geometry", link: "achievement-standards/31111.pdf" },
+  // ... Continue filling Geometry grade 11 & 12
+  // --- Calculus, General Maths, Applied Maths, Statistics, Science, English & Languages, Social Sciences, Arts & Performance, PE & Health, Technology & Business ---
+  // The same structure: { code, name, grade, type, subject, link }
+];
+
+// Populate Achievement Standards table dynamically
+const tbody = document.getElementById("achievementStandards");
+achievementStandards.forEach(s => {
+  if (s.subject === subjectName && (!selectedGrade || s.grade === selectedGrade)) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${s.code} – ${s.name}</td><td>Grade ${s.grade}</td><td>${s.type}</td><td><a href="${s.link}" target="_blank" class="text-purple-900 hover:underline">View Standard</a></td>`;
+    tbody.appendChild(tr);
+  }
+});
+
+// Example past exams
+const pastExams = [
+  { year: 2023, subject: "Algebra", link: "exams/algebra2023.pdf" },
+  { year: 2022, subject: "Calculus", link: "exams/calculus2022.pdf" }
+];
+const examsDiv = document.getElementById("pastExams");
+pastExams.filter(ex => ex.subject === subjectName).forEach(ex => {
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `<h3 class="font-bold mb-2">${ex.year} – Past Exam</h3><a href="${ex.link}" class="text-purple-900 hover:underline">View / Download</a>`;
+  examsDiv.appendChild(div);
+});
+
+// Logout
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  localStorage.removeItem("loggedIn");
+  window.location.href = "login.html";
+});
+</script>
+</body>
+</html>

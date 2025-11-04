@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Learning Hub | Ministry of Education - Square Country</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #5b21b6 0%, #7e22ce 100%); }
+    .btn-primary { background: #6a0dad; transition: all 0.3s ease; }
+    .btn-primary:hover { background: #8a2be2; transform: translateY(-2px); }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+<!-- Navigation -->
+<nav class="bg-purple-900 text-white shadow-lg">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+        <i data-feather="book" class="h-8 w-8 text-purple-900"></i>
+      </div>
+      <h1 class="text-2xl font-bold">Ministry of Education</h1>
+    </div>
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html" class="hover:text-purple-200">Home</a>
+      <a href="schools.html" class="hover:text-purple-200">Schools</a>
+      <a href="programs.html" class="hover:text-purple-200">Programs</a>
+      <a href="resources.html" class="hover:text-purple-200">Resources</a>
+      <a href="#" class="font-semibold text-purple-300">Student Hub</a>
+    </div>
+    <a href="login.html" class="bg-white text-purple-900 px-4 py-2 rounded-lg font-medium hover:bg-purple-100">Login</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-gradient text-white py-20 text-center">
+  <div class="container mx-auto px-6" data-aos="fade-down">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Student Learning Hub</h1>
+    <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+      Your all-in-one place to study, revise, and explore knowledge — powered by the Ministry of Education, Square Country.
+    </p>
+    <a href="#subjects" class="bg-white text-purple-900 px-6 py-3 rounded-lg font-medium hover:bg-purple-100">Start Learning</a>
+  </div>
+</section>
+
+<!-- Search Bar -->
+<section class="bg-white py-10 shadow-sm">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-2xl font-semibold text-purple-900 mb-4" data-aos="fade-up">Find Resources</h2>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+      <input type="text" placeholder="Search for a subject or topic..." class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-600">
+      <select class="w-full md:w-1/4 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-600">
+        <option>All Levels</option>
+        <option>Grade 10</option>
+        <option>Grade 11</option>
+        <option>Grade 12</option>
+      </select>
+      <button class="btn-primary text-white px-6 py-3 rounded-lg">Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- Subjects -->
+<section id="subjects" class="bg-gray-50 py-20">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-purple-900 mb-3" data-aos="fade-up">Subjects & Learning Areas</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Browse study materials and interactive guides by subject. Each section includes lessons, videos, and quizzes.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+        <i data-feather="divide" class="w-10 h-10 text-purple-800 mb-3"></i>
+        <h3 class="font-bold text-lg mb-2 text-purple-900">Mathematics</h3>
+        <p class="text-gray-600 mb-4">From algebra to statistics — interactive lessons and practice problems.</p>
+        <a href="maths.html" class="text-purple-800 font-medium hover:underline">Learn More →</a>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up">
+        <i data-feather="zap" class="w-10 h-10 text-purple-800 mb-3"></i>
+        <h3 class="font-bold text-lg mb-2 text-purple-900">Science</h3>
+        <p class="text-gray-600 mb-4">Hands-on lessons in physics, chemistry, biology, and more.</p>
+        <a href="#" class="text-purple-800 font-medium hover:underline">Explore Resources →</a>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+        <i data-feather="globe" class="w-10 h-10 text-purple-800 mb-3"></i>
+        <h3 class="font-bold text-lg mb-2 text-purple-900">English & Languages</h3>
+        <p class="text-gray-600 mb-4">“Engaging lessons in reading, writing, literature, and communication skills.”</p>
+        <a href="#" class="text-purple-800 font-medium hover:underline">Discover More →</a>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up">
+        <i data-feather="map" class="w-10 h-10 text-purple-800 mb-3"></i>
+        <h3 class="font-bold text-lg mb-2 text-purple-900">Social Studies</h3>
+        <p class="text-gray-600 mb-4">History, civics, and geography lessons from local to global scales.</p>
+        <a href="#" class="text-purple-800 font-medium hover:underline">Start Learning →</a>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+        <i data-feather="music" class="w-10 h-10 text-purple-800 mb-3"></i>
+        <h3 class="font-bold text-lg mb-2 text-purple-900">Arts & Performance</h3>
+        <p class="text-gray-600 mb-4">Visual arts, performing arts, and Square Country cultural studies.</p>
+        <a href="#" class="text-purple-800 font-medium hover:underline">View Topics →</a>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+        <i data-feather="dribbble" class="w-10 h-10 text-purple-800 mb-3"></i>
+        <h3 class="font-bold text-lg mb-2 text-purple-900">Physical Education & Health</h3>
+        <p class="text-gray-600 mb-4">Active learning in fitness, sports, wellness, and healthy living.</p>
+        <a href="#" class="text-purple-800 font-medium hover:underline">Go to Resources →</a>
+      </div>
+        <div class="feature-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+        <i data-feather="cpu" class="w-10 h-10 text-purple-800 mb-3"></i>
+        <h3 class="font-bold text-lg mb-2 text-purple-900">Technology & Business</h3>
+        <p class="text-gray-600 mb-4">Practical skills in coding, digital tools, entrepreneurship, and business management.</p>
+        <a href="#" class="text-purple-800 font-medium hover:underline">Go to Resources →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Popular Resources & Updates -->
+<section class="bg-white py-20 border-t border-gray-100">
+  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
+    <div data-aos="fade-right">
+      <h2 class="text-2xl font-bold text-purple-900 mb-6">Popular Resources</h2>
+      <ul class="space-y-4 text-gray-700">
+        <li>📘 <a href="#" class="text-purple-800 hover:underline">Year 10 Science Revision Pack</a></li>
+        <li>🧮 <a href="#" class="text-purple-800 hover:underline">Interactive Algebra Practice Set</a></li>
+        <li>🗺️ <a href="#" class="text-purple-800 hover:underline">Square Country History Timeline (PDF)</a></li>
+        <li>💬 <a href="#" class="text-purple-800 hover:underline">Essay Writing Workshop</a></li>
+        <li>🧠 <a href="#" class="text-purple-800 hover:underline">Study Tips for Final Exams</a></li>
+      </ul>
+    </div>
+    <div data-aos="fade-left">
+      <h2 class="text-2xl font-bold text-purple-900 mb-6">Upcoming Exams & Events</h2>
+      <ul class="space-y-4 text-gray-700">
+        <li>📅 National Literacy Exam — <span class="font-medium">March 12, 2025</span></li>
+        <li>📅 Science Challenge Week — <span class="font-medium">April 3–9, 2025</span></li>
+        <li>📅 Art and Design Exhibition — <span class="font-medium">May 20, 2025</span></li>
+        <li>📅 Square Country Academic Games — <span class="font-medium">June 2025</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-purple-900 text-white text-center py-16">
+  <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Ready to Learn?</h2>
+  <p class="text-lg mb-6" data-aos="fade-up" data-aos-delay="100">
+    Access your personalized dashboard, track your progress, and join Square Country’s learning network.
+  </p>
+  <a href="login.html" class="bg-white text-purple-900 px-8 py-3 rounded-lg font-medium hover:bg-purple-100" data-aos="fade-up" data-aos-delay="200">
+    Go to My Portal
+  </a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+  <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+    <div>
+      <h3 class="font-bold text-white mb-3">Ministry of Education</h3>
+      <p>Supporting students and teachers across Square Country.</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Explore</h4>
+      <ul class="space-y-2">
+        <li><a href="schools.html" class="hover:text-white">Schools</a></li>
+        <li><a href="programs.html" class="hover:text-white">Programs</a></li>
+        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Student Tools</h4>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-white">Assignments</a></li>
+        <li><a href="#" class="hover:text-white">Study Guides</a></li>
+        <li><a href="#" class="hover:text-white">Exam Prep</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-3">Contact</h4>
+      <p>123 Education Avenue<br>Capital City, SC</p>
+      <p>Email: <a href="mailto:info@education.sc.gov" class="text-purple-400 hover:underline">info@education.sc.gov</a></p>
+    </div>
+  </div>
+  <div class="text-center border-t border-gray-800 mt-8 pt-6 text-sm text-gray-500">
+    © 2025 Square Country Ministry of Education. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  feather.replace();
+</script>
+
+</body>
+</html>

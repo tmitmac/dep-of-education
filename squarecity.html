@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Country - Ministry of Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #6a0dad 0%, #8a2be2 100%);
+        }
+        .btn-primary {
+            background: #6a0dad;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #8a2be2;
+            transform: translateY(-2px);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+    <nav class="bg-purple-900 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold">Ministry of Education</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link font-medium">Home</a>
+                    <a href="schools.html" class="nav-link font-medium">Schools</a>
+                    <a href="#" class="nav-link font-medium">Programs</a>
+                    <a href="#" class="nav-link font-medium">Resources</a>
+                    <a href="#" class="nav-link font-medium">About</a>
+                    <a href="login.html" class="bg-white text-purple-900 px-4 py-2 rounded-lg font-medium hover:bg-purple-100 transition">Login</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Header -->
+  <section class="bg-purple-800 text-white py-16 text-center">
+    <h1 class="text-4xl font-bold mb-2">Square City District</h1>
+    <p class="text-lg text-purple-200">Comprises of the Capital City, New Dublin, and Heartland towns.</p>
+  </section>
+
+  <!-- Filter -->
+  <section class="py-10 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+        <h2 class="text-2xl font-bold text-purple-900 mb-4 md:mb-0">Schools Directory</h2>
+        <select id="filterSelect" class="border border-gray-300 rounded-lg px-4 py-2">
+          <option value="all">All Schools</option>
+          <option value="primary">Primary</option>
+          <option value="secondary">Secondary</option>
+          <option value="college">Colleges</option>
+        </select>
+      </div>
+
+      <!-- School cards -->
+      <div id="schoolList" class="grid md:grid-cols-3 gap-8">
+      <!-- Primary -->
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="primary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Meston Hills Primary</h3>
+          <p class="text-gray-600 mb-2">Square City - Meston</p>
+          <p class="text-sm text-gray-500">A leading primary school with a focus on literacy and innovation.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="primary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Brighton Park Primary</h3>
+          <p class="text-gray-600 mb-2">Square City - Brighton Park</p>
+          <p class="text-sm text-gray-500">Excels in early numeracy and literacy through creative classroom practice.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="primary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Harbour Lane Primary</h3>
+          <p class="text-gray-600 mb-2">Square City - CBD East</p>
+          <p class="text-sm text-gray-500">Combines environmental education with strong academic foundations.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="primary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">New Dublin Primary School</h3>
+          <p class="text-gray-600 mb-2">New Dublin</p>
+          <p class="text-sm text-gray-500">Promotes critical thinking, collaboration, and early digital literacy.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="primary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Seagate Primary School</h3>
+          <p class="text-gray-600 mb-2">Seagate</p>
+          <p class="text-sm text-gray-500">A seaside primary known for science, sustainability, and student curiosity.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="primary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Wellingborough Central Primary</h3>
+          <p class="text-gray-600 mb-2">Wellingborough</p>
+          <p class="text-sm text-gray-500">A long-established community school known for academic excellence.</p>
+        </div>
+<!-- Secondary -->
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="secondary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">St Helena's Intermediate</h3>
+          <p class="text-gray-600 mb-2">Square City</p>
+          <p class="text-sm text-gray-500">Known for its innovative teaching methods and commitment to inclusive education.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="secondary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Queen’s Avenue Secondary School</h3>
+          <p class="text-gray-600 mb-2">Square City</p>
+          <p class="text-sm text-gray-500">A high-performing school noted for excellence in humanities and public speaking.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="secondary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Cityview Academy</h3>
+          <p class="text-gray-600 mb-2">Square City - Thornfield</p>
+          <p class="text-sm text-gray-500">Encourages independent thinking and community engagement in every student.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="secondary">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Seagate Intermediate Academy</h3>
+          <p class="text-gray-600 mb-2">Seagate</p>
+          <p class="text-sm text-gray-500">Celebrates diversity and inclusion with a global-minded curriculum.</p>
+        </div>
+<!-- Colleges -->
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="college">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Sqaure City Central College</h3>
+          <p class="text-gray-600 mb-2">Square City - Savannah Square</p>
+          <p class="text-sm text-gray-500">A historic secondary institution recognised for academic excellence and performing arts.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="college">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Capital Technical Institute</h3>
+          <p class="text-gray-600 mb-2">Square City - The Viaduct</p>
+          <p class="text-sm text-gray-500">Offers vocational and technical training with strong industry partnerships.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="college">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">Square City Grammar</h3>
+          <p class="text-gray-600 mb-2">Square City - South</p>
+          <p class="text-sm text-gray-500">A selective school preparing students for higher education through rigorous academics.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="college">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">South Meston High School</h3>
+          <p class="text-gray-600 mb-2">Square City - Meston</p>
+          <p class="text-sm text-gray-500">A selective school preparing students for higher education through rigorous academics.</p>
+        </div>
+        <div class="school-card bg-gray-50 p-6 rounded-lg shadow-md" data-type="college">
+          <h3 class="text-xl font-bold text-purple-900 mb-2">New Dublin College</h3>
+          <p class="text-gray-600 mb-2">New Dublin</p>
+          <p class="text-sm text-gray-500">A bustling hub of primary education with strong academic and sports programs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Department of Education</h3>
+                    <p class="text-gray-400">Building the future of Square Country through education and innovation.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Schools Directory</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Publications</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Curriculum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Research</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Statistics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Forms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <address class="not-italic text-gray-400">
+                        <p class="mb-2">123 Education Avenue</p>
+                        <p class="mb-2">Capital City, SC 10001</p>
+                        <p class="mb-2">Phone: (123) 456-7890</p>
+                        <p>Email: info@education.sc.gov</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2023 Square Country Ministry of Education. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  <script>
+    feather.replace();
+    AOS.init();
+
+    // Simple filter logic
+    const filterSelect = document.getElementById("filterSelect");
+    const cards = document.querySelectorAll(".school-card");
+    filterSelect.addEventListener("change", e => {
+      const value = e.target.value;
+      cards.forEach(card => {
+        card.style.display = (value === "all" || card.dataset.type === value) ? "block" : "none";
+      });
+    });
+  </script>
+
+  <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+        
+        // Vanta.js Globe Background for Hero Section
+        VANTA.GLOBE({
+            el: "#hero",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x8a2be2,
+            backgroundColor: 0x6a0dad,
+            size: 0.8
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linear Equations | Ministry of Education</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<style>
+body { font-family: 'Poppins', sans-serif; background-color: #f3f4f6; }
+.sidebar { background-color: #6a0dad; color: white; min-height: 100vh; padding: 1rem; }
+.sidebar button { display: block; width: 100%; margin-bottom: 0.5rem; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 500; text-align: left; transition: 0.3s; }
+.sidebar button.active, .sidebar button:hover { background-color: #8a2be2; }
+.lesson-step { display: none; }
+.lesson-step.active { display: block; }
+.card { background: white; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.12); }
+input[type="number"] { border: 1px solid #d1d5db; border-radius: 0.375rem; padding: 0.5rem; width: 4rem; }
+.feedback { font-weight: 600; margin-top: 0.5rem; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-purple-900 text-white py-4 shadow-md">
+  <div class="container mx-auto flex justify-between items-center px-6">
+    <div class="flex items-center space-x-4">
+      <i data-feather="book-open" class="w-8 h-8"></i>
+      <h1 class="text-2xl font-bold">Ministry of Education</h1>
+    </div>
+  </div>
+</header>
+
+<div class="flex flex-col md:flex-row">
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar w-full md:w-64">
+    <h2 class="text-xl font-bold mb-4">Linear Equations</h2>
+    <button class="active" onclick="showStep(0)">Introduction</button>
+    <button onclick="showStep(1)">One-Step Equations</button>
+    <button onclick="showStep(2)">Two-Step Equations</button>
+    <button onclick="showStep(3)">Practice</button>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 space-y-6">
+
+    <!-- Step 0: Introduction -->
+    <div class="lesson-step active card" data-aos="fade-up">
+      <h2 class="text-2xl font-bold mb-3">What is a Linear Equation?</h2>
+      <p>Linear equations involve variables to the first power only. Example:</p>
+      <pre class="bg-gray-100 p-3 rounded">2x + 3 = 11</pre>
+      <p>Solve for x to find the unknown value.</p>
+    </div>
+
+    <!-- Step 1: One-Step Equations -->
+    <div class="lesson-step card" data-aos="fade-up">
+      <h2 class="text-2xl font-bold mb-3">One-Step Equations</h2>
+      <p>Example: <strong>x + 5 = 12</strong></p>
+      <p>Subtract 5 from both sides: <strong>x = 7</strong></p>
+      <div class="mt-4">
+        <input type="number" id="oneStepInput" placeholder="x=?" />
+        <button class="px-3 py-1 bg-purple-700 text-white rounded ml-2" onclick="checkOneStep()">Check</button>
+        <p id="oneStepFeedback" class="feedback"></p>
+      </div>
+    </div>
+
+    <!-- Step 2: Two-Step Equations -->
+    <div class="lesson-step card" data-aos="fade-up">
+      <h2 class="text-2xl font-bold mb-3">Two-Step Equations</h2>
+      <p>Example: <strong>2x + 3 = 11</strong></p>
+      <ol class="list-decimal list-inside">
+        <li>Subtract 3 → 2x = 8</li>
+        <li>Divide by 2 → x = 4</li>
+      </ol>
+      <div class="mt-4">
+        <input type="number" id="twoStepInput" placeholder="x=?" />
+        <button class="px-3 py-1 bg-purple-700 text-white rounded ml-2" onclick="checkTwoStep()">Check</button>
+        <p id="twoStepFeedback" class="feedback"></p>
+      </div>
+    </div>
+
+    <!-- Step 3: Practice -->
+    <div class="lesson-step card" data-aos="fade-up">
+      <h2 class="text-2xl font-bold mb-3">Practice Problems</h2>
+      <ol class="list-decimal list-inside space-y-2 text-gray-700">
+        <li>x + 8 = 15 → <input type="number" class="practice-input" data-answer="7"></li>
+        <li>4x - 3 = 13 → <input type="number" class="practice-input" data-answer="4"></li>
+        <li>2x + 7 = 15 → <input type="number" class="practice-input" data-answer="4"></li>
+      </ol>
+      <button class="mt-3 px-3 py-1 bg-purple-700 text-white rounded" onclick="checkPractice()">Check All</button>
+      <div id="practiceFeedback" class="feedback"></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12 mt-12">
+  <div class="container mx-auto px-6 text-center md:text-left grid md:grid-cols-4 gap-8">
+    <div>
+      <h3 class="font-bold text-white mb-3">Ministry of Education</h3>
+      <p>Empowering every learner across Square Country.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+feather.replace();
+
+// Show selected step
+function showStep(index) {
+  document.querySelectorAll('.lesson-step').forEach((el,i) => el.classList.toggle('active', i === index));
+  document.querySelectorAll('.sidebar button').forEach((btn,i) => btn.classList.toggle('active', i === index));
+}
+
+// Check answers
+function checkOneStep() {
+  const val = document.getElementById('oneStepInput').value;
+  const feedback = document.getElementById('oneStepFeedback');
+  feedback.textContent = val == 7 ? "Correct! 🎉" : "Try again.";
+  feedback.style.color = val == 7 ? "green" : "red";
+}
+function checkTwoStep() {
+  const val = document.getElementById('twoStepInput').value;
+  const feedback = document.getElementById('twoStepFeedback');
+  feedback.textContent = val == 4 ? "Correct! 🎉" : "Try again.";
+  feedback.style.color = val == 4 ? "green" : "red";
+}
+function checkPractice() {
+  let correct = 0;
+  document.querySelectorAll('.practice-input').forEach(input => {
+    if(Number(input.value) === Number(input.dataset.answer)) correct++;
+  });
+  const feedback = document.getElementById('practiceFeedback');
+  feedback.textContent = `You got ${correct}/${document.querySelectorAll('.practice-input').length} correct.`;
+  feedback.style.color = "purple";
+}
+</script>
+
+</body>
+</html>
