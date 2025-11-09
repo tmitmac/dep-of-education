@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 11 English External Assessment | Ministry of Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-purple-700 text-white py-4 px-6 flex justify-between items-center">
+    <div class="text-lg font-semibold">Ministry of Education — External Assessment</div>
+    <div class="text-sm">Square Country Qualifications Authority</div>
+  </header>
+
+  <!-- Banner -->
+  <div class="bg-yellow-400 text-gray-900 font-semibold py-3 px-6">
+    Grade 11 English — Standard 63021: Demonstrate understanding of synthesizing textual analysis across genres
+  </div>
+
+  <!-- Exam Container -->
+  <main class="max-w-5xl mx-auto my-10 bg-white rounded-2xl shadow-md overflow-hidden">
+    
+    <!-- Tab Navigation -->
+    <div class="flex border-b border-gray-200 bg-gray-100 text-gray-700">
+      <button class="tab-button px-6 py-3 font-medium hover:bg-white border-b-2 border-transparent focus:outline-none" data-tab="1">Question 1</button>
+      <button class="tab-button px-6 py-3 font-medium hover:bg-white border-b-2 border-transparent focus:outline-none" data-tab="2">Question 2</button>
+      <button class="tab-button px-6 py-3 font-medium hover:bg-white border-b-2 border-transparent focus:outline-none" data-tab="3">Question 3</button>
+      <button class="tab-button ml-auto px-6 py-3 font-medium hover:bg-white border-b-2 border-transparent focus:outline-none" data-tab="submit">Submit</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="p-8">
+      <!-- Question 1 -->
+      <section id="tab-1" class="tab-content">
+        <h2 class="text-2xl font-bold mb-4">Question 1 — Comparative Analysis (10 marks)</h2>
+        <p class="mb-4">Compare how two different texts from distinct genres (e.g., a poem and a short story) explore a common theme such as identity, power, or belonging.</p>
+        <textarea class="w-full h-64 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600" placeholder="Write your response here..."></textarea>
+      </section>
+
+      <!-- Question 2 -->
+      <section id="tab-2" class="tab-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Question 2 — Synthesis and Evaluation (10 marks)</h2>
+        <p class="mb-4">Explain how the use of style and structure across your selected texts contributes to the reader’s understanding of a shared idea.</p>
+        <textarea class="w-full h-64 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600" placeholder="Write your response here..."></textarea>
+      </section>
+
+      <!-- Question 3 -->
+      <section id="tab-3" class="tab-content hidden">
+        <h2 class="text-2xl font-bold mb-4">Question 3 — Insight and Interpretation (10 marks)</h2>
+        <p class="mb-4">Discuss how context (historical, cultural, or personal) influences the interpretation of ideas across your chosen genres.</p>
+        <textarea class="w-full h-64 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600" placeholder="Write your response here..."></textarea>
+      </section>
+
+      <!-- Submit Page -->
+      <section id="tab-submit" class="tab-content hidden text-center">
+        <h2 class="text-2xl font-bold mb-4">Submit Your Assessment</h2>
+        <p class="mb-6 text-gray-600">Please review your answers carefully before submitting. Once you submit, you will not be able to make further changes.</p>
+        <a href="submission.html" class="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-8 py-3 rounded-lg shadow inline-block">
+          Submit Assessment
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-600 text-sm text-center py-4">
+    © 2025 Square Country Ministry of Education — National Qualifications Division
+  </footer>
+
+  <!-- Tab Script -->
+  <script>
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('border-purple-700', 'text-purple-700', 'bg-white'));
+        contents.forEach(c => c.classList.add('hidden'));
+        tab.classList.add('border-purple-700', 'text-purple-700', 'bg-white');
+        document.getElementById('tab-' + tab.dataset.tab).classList.remove('hidden');
+      });
+    });
+
+    // Default open first tab
+    tabs[0].classList.add('border-purple-700', 'text-purple-700', 'bg-white');
+  </script>
+
+</body>
+</html>
