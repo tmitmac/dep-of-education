@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Exam Portal | Ministry of Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-700 to-indigo-700 text-white py-4 px-6 flex justify-between items-center shadow-md">
+    <div class="text-lg font-semibold">Ministry of Education — Digital Exam Portal</div>
+    <div class="text-sm opacity-90">Square Country Qualifications Authority</div>
+  </header>
+
+  <!-- Banner -->
+  <div class="bg-purple-200 text-purple-900 font-semibold py-3 px-6 shadow-inner">
+    Grade 11 English — External Digital Assessment Information
+  </div>
+
+  <!-- Container -->
+  <main class="max-w-4xl mx-auto my-10 bg-white rounded-2xl shadow-lg overflow-hidden border border-purple-100">
+    
+    <!-- Tabs -->
+    <div class="flex border-b border-gray-200 bg-purple-50 text-gray-700">
+      <button class="tab-button px-6 py-3 font-medium hover:bg-white border-b-2 border-transparent focus:outline-none" data-tab="1">Overview</button>
+      <button class="tab-button px-6 py-3 font-medium hover:bg-white border-b-2 border-transparent focus:outline-none" data-tab="2">Rules & Monitoring</button>
+      <button class="tab-button px-6 py-3 font-medium hover:bg-white border-b-2 border-transparent focus:outline-none" data-tab="3">Access Code</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="p-8 space-y-8">
+
+      <!-- Overview -->
+      <section id="tab-1" class="tab-content">
+        <h2 class="text-2xl font-bold mb-4 text-purple-700">1. Exam Overview</h2>
+        <p class="text-gray-700 mb-4">Welcome to the Square Country Ministry of Education’s digital assessment platform. This system is used for all external online assessments under the Square Country Qualifications Authority.</p>
+
+        <ul class="list-disc ml-6 space-y-2 text-gray-700">
+          <li>You will complete the exam entirely online using this secure interface.</li>
+          <li>Each question will appear on a separate page or tab within the exam.</li>
+          <li>Your responses will be automatically saved as you type.</li>
+          <li>You will have access to a timer, spell check, and answer review tools during the exam.</li>
+        </ul>
+
+        <div class="flex justify-end mt-8">
+          <button class="next-tab bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-lg shadow transition" data-next="2">Next</button>
+        </div>
+      </section>
+
+      <!-- Rules & Monitoring -->
+      <section id="tab-2" class="tab-content hidden">
+        <h2 class="text-2xl font-bold mb-4 text-purple-700">2. Rules & Monitoring</h2>
+        <p class="text-gray-700 mb-4">This digital assessment is conducted under secure examination conditions. By proceeding, you agree to the following:</p>
+
+        <ul class="list-disc ml-6 space-y-2 text-gray-700">
+          <li><strong>Monitoring:</strong> Your screen activity, keyboard input, and mouse movement may be tracked to ensure exam integrity.</li>
+          <li><strong>Security:</strong> Opening new tabs or navigating away from the exam may trigger an automatic warning, lock-out, or log-out.</li>
+          <li><strong>Communication:</strong> You must not communicate with other candidates or use external devices during the exam.</li>
+          <li><strong>Submission:</strong> Your responses will be securely encrypted and transmitted to SCQA upon submission.</li>
+        </ul>
+
+        <div class="flex justify-between mt-8">
+          <button class="prev-tab bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-6 py-2 rounded-lg shadow transition" data-prev="1">Back</button>
+          <button class="next-tab bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-lg shadow transition" data-next="3">Next</button>
+        </div>
+      </section>
+
+      <!-- Access Code -->
+      <section id="tab-3" class="tab-content hidden text-center">
+        <h2 class="text-2xl font-bold mb-4 text-purple-700">3. Access Code</h2>
+        <p class="text-gray-700 mb-6">To begin your digital exam, please enter the 4-digit access code provided by your exam supervisor.</p>
+
+        <input id="accessCode" type="password" maxlength="4" placeholder="••••" class="tracking-widest text-center text-2xl font-bold border border-gray-300 rounded-lg p-3 w-32 focus:ring-2 focus:ring-purple-600 focus:border-purple-600">
+
+        <p id="errorMsg" class="text-red-600 text-sm mt-3 hidden">Incorrect access code. Please speak to your exam supervisor.</p>
+
+        <div class="flex justify-between mt-8">
+          <button class="prev-tab bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-6 py-2 rounded-lg shadow transition" data-prev="2">Back</button>
+          <button id="enterExam" class="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-lg shadow transition">Enter Exam</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-purple-50 text-purple-800 text-sm text-center py-4 border-t border-purple-100">
+    © 2025 Square Country Ministry of Education — National Qualifications Division
+  </footer>
+
+  <!-- Tab and Access Code Script -->
+  <script>
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+    const nextButtons = document.querySelectorAll('.next-tab');
+    const prevButtons = document.querySelectorAll('.prev-tab');
+    const enterExam = document.getElementById('enterExam');
+    const errorMsg = document.getElementById('errorMsg');
+    const accessCodeInput = document.getElementById('accessCode');
+
+    function showTab(tabNumber) {
+      tabs.forEach(t => t.classList.remove('border-purple-700', 'text-purple-700', 'bg-white'));
+      contents.forEach(c => c.classList.add('hidden'));
+      tabs[tabNumber - 1].classList.add('border-purple-700', 'text-purple-700', 'bg-white');
+      document.getElementById('tab-' + tabNumber).classList.remove('hidden');
+    }
+
+    // Navigation
+    tabs.forEach(tab => tab.addEventListener('click', () => showTab(tab.dataset.tab)));
+    nextButtons.forEach(btn => btn.addEventListener('click', () => showTab(btn.dataset.next)));
+    prevButtons.forEach(btn => btn.addEventListener('click', () => showTab(btn.dataset.prev)));
+
+    // Access Code Validation
+    enterExam.addEventListener('click', () => {
+      const code = accessCodeInput.value;
+      const correctCode = "8403"; // update this to the real exam code
+
+      if (code === correctCode) {
+        window.location.href = "exam.html";
+      } else {
+        errorMsg.classList.remove('hidden');
+        accessCodeInput.classList.add('border-red-500', 'ring-red-500');
+      }
+    });
+
+    // Default open first tab
+    showTab(1);
+  </script>
+
+</body>
+</html>
